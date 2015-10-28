@@ -1,4 +1,4 @@
-var app = angular.module('eobApp', ['ngRoute']);
+var app = angular.module('eobApp', ['ngRoute', 'ngFileUpload']);
 
 app.config(function($routeProvider, $locationProvider){
     $routeProvider

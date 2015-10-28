@@ -14,7 +14,7 @@ var home = require('./routes/home');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var register = require('./routes/register');
-var addSwatch = require('./routes/addSwatch');
+var add = require('./routes/add');
 //var uploads = require('./routes/uploads');
 
 var User = require('./models/user');
@@ -92,7 +92,7 @@ app.use('/home', home);
 app.use('/users', users);
 app.use('/login', login);
 app.use('/register', register);
-app.use('/add', addSwatch);
+app.use('/add', add);
 //app.use('/uploads', uploads);
 
 // catch 404 and forward to error handler
@@ -128,3 +128,4 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+

@@ -46,6 +46,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(session({
   secret: 'secret',
@@ -93,6 +94,12 @@ app.use('/users', users);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/add', add);
+
+
+//Catch all
+app.get('/*', function(request, response, next) {
+  response.sendFile(path.join(__dirname, '../views/index.html'));
+});
 //app.use('/uploads', uploads);
 
 // catch 404 and forward to error handler

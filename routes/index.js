@@ -5,7 +5,7 @@ var passport = require('passport');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/*', function(request, response, next) {
+router.get('/', function(request, response, next) {
   response.sendFile(path.join(__dirname, '../views/index.html'));
 });
 

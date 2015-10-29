@@ -2,7 +2,7 @@
 //var path = require('path');
 //var fs = require('fs');
 //var router = express.Router();
-//var Swatches = require('../models/swatch');
+//var Swatch = require('../models/swatch');
 //
 //router.get('/')
 //
@@ -10,7 +10,7 @@
 //
 //router.get('/:name', function (request, response, next) {
 //    console.log(request.params);
-//    Swatches.findOne({name: request.params.name}, function(err, swatch){
+//    Swatch.findOne({name: request.params.name}, function(err, swatch){
 //        var imagePath = path.join(__dirname, '../' + request.params.swatch.path);
 //        response.sendFile(imagePath);
 //    });

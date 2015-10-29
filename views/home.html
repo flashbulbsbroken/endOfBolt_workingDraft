@@ -14,14 +14,15 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
 
-                        <div ng-repeat="image in fabricStash">
-                            <div class="col-xs-6 col-md-4">
-                                <a href="#" class="thumbnail">
-                                    <img ng-src="/uploads/{{image.img.filename}}">
-                                </a>
-                            </div>
-                        </div>
+                            <div ng-repeat="item in swatchList track by $index">
 
+                                <div class="col-xs-6 col-md-4">
+                                    <a href="#" class="thumbnail">
+                                        <!--{{item.img.path}}-->
+                                        <img ng-src="{{item.img.path}}" />
+                                    </a>
+                                </div>
+                            </div>
 
                         <div class="col-xs-6 col-md-4">
                             <a href="#" class="thumbnail">

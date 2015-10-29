@@ -1,6 +1,6 @@
-app.controller('AddSwatchController', ['$scope', '$http', 'Upload', function($scope, $http, Upload){
+app.controller('AddSwatchController', ['$scope', '$http', '$location', 'Upload', function($scope, $http, $location, Upload){
 
-    $scope.fabricStash = [];
+    //$scope.fabricStash = [{}];
 
     $scope.swatchForm = {};
 
@@ -9,6 +9,7 @@ app.controller('AddSwatchController', ['$scope', '$http', 'Upload', function($sc
 
         $scope.upload($scope.file);
 
+        $location.path('/home');
         //var swatchData = $scope.swatchForm;
         //
         //$http({method: "POST", url: "/add/add", enctype:"multipart/form-data", data: swatchData}).then(function(response){
@@ -18,16 +19,12 @@ app.controller('AddSwatchController', ['$scope', '$http', 'Upload', function($sc
         //});
     };
 
-    //var createSwatch = function(imgParam){
-    //    return {
-    //        image: imgParam
-    //    };
-    //};
-
     $scope.upload = function (file) {
+        var data = {file: file, swatchData: $scope.swatchForm};
+
         Upload.upload({
             url: '/add/add',
-            data: {file: file, swatchData: $scope.swatchForm}
+            data: data
         }).then(function (resp) {
             console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
         }, function (resp) {
@@ -36,20 +33,22 @@ app.controller('AddSwatchController', ['$scope', '$http', 'Upload', function($sc
             var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
             console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
         });
+
     };
 
-
-    $scope.getSwatches = function(){
-        $http({method: "GET", url:"/add/get"}).then(function(response){
-            console.log(response);
-
-            $scope.fabricStash = [];
-
-            $scope.fabricStash.push(response.data);
-        });
-    };
-
-    $scope.getSwatches();
+    //$scope.getSwatches = function(){
+    //    $http({method: "GET", url:"/home/get"}).then(function(response){
+    //
+    //        $scope.swatchList = [];
+    //
+    //        for (var i = 0; i < response.fabricStash.length; i++){
+    //            $scope.swatchList.push(response.data.fabricStash[i].img.path);
+    //        }
+    //
+    //    });
+    //};
+    //
+    //$scope.getSwatches();
 
 
 }]);

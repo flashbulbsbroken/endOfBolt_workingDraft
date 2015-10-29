@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+var swatchSchema = require('./swatch').schema;
 
 var Schema = mongoose.Schema;
 
@@ -11,7 +12,7 @@ var UserSchema = new Schema({
     firstName: String,
     lastName: String,
     profileImg: String,
-    fabricStash: Array
+    fabricStash: [swatchSchema]
 });
 
 UserSchema.pre('save', function(next){

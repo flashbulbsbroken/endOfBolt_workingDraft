@@ -4,7 +4,7 @@ var fs = require('fs');
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'});
 
-var Swatches = require('../models/swatch');
+var Swatch = require('../models/swatch');
 var User = require('../models/user');
 
 var router = express.Router();
@@ -18,7 +18,7 @@ router.get('/', function (request, response, next) {
 //Don't understand what this is doing? Why is it needed?
 //router.get('/:filename', function (request, response, next) {
 //    console.log(request.params.filename);
-//    Swatches.findOne({
+//    Swatch.findOne({
 //        'file.filename': request.params.filename
 //    }, function (err, upload) {
 //
@@ -35,81 +35,73 @@ router.get('/', function (request, response, next) {
 
 router.post('/add', upload.single('file'), function(request, response, next) {
     console.log('Body', request.body);
+    console.log('bodyswatchdata', request.body.swatchData);
     console.log('File', request.file);
+
     var createObj = request.body.swatchData;
     createObj.img = request.file;
-    Swatches.create(createObj, function(err, post) {
-        response.send('ok');
-    });
-    //response.send(200);
-});
 
+    Swatch.model.create(createObj, function (err, swatch) {
+        //console.log(swatch);
+        //
+        //console.log(request.user);
 
-router.put('/pushSwatch', function (request, response) {
-    console.log('reached add swatch/add endpoint');
+        if(err) throw err;
 
-    //var currentUser = request.body.data._id;
+        User.findOne({_id:request.user._id}, function(err, user){
 
-    console.log('This', request.body);
+            console.log('this is the user', user);
+            console.log('this is the swatch', swatch);
 
-    User.findOneAndUpdate(
-        {_id:request.body.userID},
-        {$push:{fabricStash:request.body.data}},
-        {safe:true,upsert:true},
+            if(!user.fabricStash){
+                user.fabricStash = [];
+            }
 
-        function(err, toDo) {
-            if (err) console.log(err);
+            user.fabricStash.push(swatch);
 
-            response.sendStatus(200);
+            user.save(function(err) {
+                if(err) throw err;
+            })
+
         });
-    //var swatch = {
-    //    //userID references the id of who is currently logged in
-    //    userID: request.user._id,
-    //    name: request.body.fabricName,
-    //    collection: request.body.collectionz,
-    //    designer: request.body.designer,
-    //    manufacturer: request.body.manufacturer,
-    //    amountYards: request.body.amountYd,
-    //    amountInches: request.body.amountIn,
-    //    width: request.body.width,
-    //    colors: request.body.colors,
-    //    img: request.file,
-    //    dateAdded: Date.now()
-    //};
-    //
-    //Swatches.create(swatch, request.body, function (err, post) {
-    //    if (err) {
-    //        console.log(err);
-    //        next(err);
-    //    } else {
-    //
-    //        //////////////////////////////////////
-    //        //LOOK INTO WHY I CAN'T ROUTE TO HOME
-    //        /////////////////////////////////////
-    //
-    //        response.redirect('/');
-    //    }
-    //});
+        response.sendStatus(200);
+    });
 });
 
-//router.post('/pushSwatch', function(request, response){
+//router.put('/push', function (request, response, next) {
 //
-//console.log('made it to pushSwatch');
-//    console.log(request.body);
+//    console.log(request.user);
+//
+//    User.findOne({_id: request.user._id}, function (err, user) {
+//
+//        if(err) throw err;
+//
+//        console.log('this is the user', user);
+//        //console.log('this is the swatch', swatch);
+//
+//        //user.fabricStash.push(swatch);
+//
+//        user.save(function (err) {
+//            if (err) throw err;
+//        })
+//
+//    });
+//
+//    response.sendStatus(200);
 //
 //});
+//
 
-router.get('/get/:userID?', function(request, response, next){
-    var userID = request.user._id;
+//router.get('/get', function (request, response, next) {
+//
+//    User.findOne({__id: request.user._id}, function (err, user) {
+//        console.log(fabricStash);
+//        response.json(fabricStash);
+//
+//        if (err) throw err;
+//    });
+//});
 
-    if(userID){
-        User.findOne({fabricStash:[]}, function(err, fabricStashes){
-            response.json(fabricStashes);
-        })
-    }else{
-        return err;
-    }
-});
 
 
 

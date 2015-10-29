@@ -17,4 +17,7 @@ var swatchSchema = new Schema({
 
 var Swatch = mongoose.model('Swatch', swatchSchema);
 
-module.exports = Swatch;
+exports.schema = swatchSchema;
+exports.model = Swatch;
+
+//module.exports = Swatch;

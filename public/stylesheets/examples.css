@@ -3,7 +3,7 @@
 }
 .landing-header{
     background-size: cover;
-    min-height: 570px;
+    min-height: 300px;
 }
 .landing-header .motto{
     padding-top: 8%;
@@ -76,9 +76,10 @@
     z-index: 3;
     width: 100%;
 }
-.register-footer .fa-heart{
+.footer .fa-heart{
     color: #ED2AB9;
 }
+
 .register-card{
     background-color: #FB5CE1;
     border-radius: 8px;

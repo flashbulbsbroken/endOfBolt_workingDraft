@@ -13,6 +13,19 @@ app.controller('HomeController', ['$scope', '$http', function($scope, $http){
         });
     };
 
+
+    ////data has nothing
+    //$scope.getSwatchDetails = function(){
+    //    $http({method: "GET", url:"/home/details"}).then(function(response){
+    //
+    //        console.log('response details', response.data);
+    //
+    //        $scope.details = response.data;
+    //
+    //    });
+    //};
+
+
     $scope.getSwatches();
 
 }]);

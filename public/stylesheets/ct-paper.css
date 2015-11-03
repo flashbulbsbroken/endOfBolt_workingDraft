@@ -664,67 +664,69 @@ textarea.form-control {
  *
  * http://api.jqueryui.com/slider/#theming
  */
-.ui-slider {
-  border-radius: 3px;
-  position: relative;
-  text-align: left; }
 
-.ui-slider .ui-slider-handle {
-  position: absolute;
-  z-index: 2;
-  width: 1.2em;
-  height: 1.2em;
-  cursor: default; }
 
-.ui-slider .ui-slider-range {
-  background-position: 0 0;
-  border: 0;
-  border-radius: 3px;
-  display: block;
-  font-size: .7em;
-  position: absolute;
-  z-index: 1; }
+/*.ui-slider {*/
+  /*border-radius: 3px;*/
+  /*position: relative;*/
+  /*text-align: left; }*/
 
-/* For IE8 - See #6727 */
-.ui-slider.ui-state-disabled .ui-slider-handle,
-.ui-slider.ui-state-disabled .ui-slider-range {
-  filter: inherit; }
+/*.ui-slider .ui-slider-handle {*/
+  /*position: absolute;*/
+  /*z-index: 2;*/
+  /*width: 1.2em;*/
+  /*height: 1.2em;*/
+  /*cursor: default; }*/
 
-.ui-slider-horizontal {
-  height: 8px; }
+/*.ui-slider .ui-slider-range {*/
+  /*background-position: 0 0;*/
+  /*border: 0;*/
+  /*border-radius: 3px;*/
+  /*display: block;*/
+  /*font-size: .7em;*/
+  /*position: absolute;*/
+  /*z-index: 1; }*/
 
-.ui-slider-horizontal .ui-slider-handle {
-  margin-left: -10px;
-  top: -4px; }
+/*/!* For IE8 - See #6727 *!/*/
+/*.ui-slider.ui-state-disabled .ui-slider-handle,*/
+/*.ui-slider.ui-state-disabled .ui-slider-range {*/
+  /*filter: inherit; }*/
 
-.ui-slider-horizontal .ui-slider-range {
-  top: 0;
-  height: 100%; }
+/*.ui-slider-horizontal {*/
+  /*height: 8px; }*/
 
-.ui-slider-horizontal .ui-slider-range-min {
-  left: 0; }
+/*.ui-slider-horizontal .ui-slider-handle {*/
+  /*margin-left: -10px;*/
+  /*top: -4px; }*/
 
-.ui-slider-horizontal .ui-slider-range-max {
-  right: 0; }
+/*.ui-slider-horizontal .ui-slider-range {*/
+  /*top: 0;*/
+  /*height: 100%; }*/
 
-.ui-slider-vertical {
-  width: .8em;
-  height: 100px; }
+/*.ui-slider-horizontal .ui-slider-range-min {*/
+  /*left: 0; }*/
 
-.ui-slider-vertical .ui-slider-handle {
-  left: -.3em;
-  margin-left: 0;
-  margin-bottom: -.6em; }
+/*.ui-slider-horizontal .ui-slider-range-max {*/
+  /*right: 0; }*/
 
-.ui-slider-vertical .ui-slider-range {
-  left: 0;
-  width: 100%; }
+/*.ui-slider-vertical {*/
+  /*width: .8em;*/
+  /*height: 100px; }*/
 
-.ui-slider-vertical .ui-slider-range-min {
-  bottom: 0; }
+/*.ui-slider-vertical .ui-slider-handle {*/
+  /*left: -.3em;*/
+  /*margin-left: 0;*/
+  /*margin-bottom: -.6em; }*/
 
-.ui-slider-vertical .ui-slider-range-max {
-  top: 0; }
+/*.ui-slider-vertical .ui-slider-range {*/
+  /*left: 0;*/
+  /*width: 100%; }*/
+
+/*.ui-slider-vertical .ui-slider-range-min {*/
+  /*bottom: 0; }*/
+
+/*.ui-slider-vertical .ui-slider-range-max {*/
+  /*top: 0; }*/
 
 /* Component containers
 ----------------------------------*/
@@ -754,20 +756,20 @@ textarea.form-control {
 .ui-widget-header a {
   color: #222222; }
 
-.slider-primary .ui-widget-header {
-  background-color: #7A9E9F; }
+/*.slider-primary .ui-widget-header {*/
+  /*background-color: #7A9E9F; }*/
 
-.slider-info .ui-widget-header {
-  background-color: #68B3C8; }
+/*.slider-info .ui-widget-header {*/
+  /*background-color: #68B3C8; }*/
 
-.slider-success .ui-widget-header {
-  background-color: #7AC29A; }
+/*.slider-success .ui-widget-header {*/
+  /*background-color: #7AC29A; }*/
 
-.slider-warning .ui-widget-header {
-  background-color: #F3BB45; }
+/*.slider-warning .ui-widget-header {*/
+  /*background-color: #F3BB45; }*/
 
-.slider-danger .ui-widget-header {
-  background-color: #EB5E28; }
+/*.slider-danger .ui-widget-header {*/
+  /*background-color: #EB5E28; }*/
 
 /* Interaction states
 ----------------------------------*/
@@ -1895,60 +1897,60 @@ textarea.form-control {
 .panel-default > .panel-heading + .panel-collapse.gsdk-collapse > .panel-body {
   box-shadow: inset 0 7px 10px -7px rgba(0, 0, 0, 0.14); }
 
-.carousel-control {
-  background-color: #EB5E28;
-  border-radius: 50%;
-  opacity: 1;
-  text-shadow: none; }
-  .carousel-control:hover, .carousel-control:focus {
-    opacity: 1;
-    background-color: #B33C12; }
+/*.carousel-control {*/
+  /*background-color: #EB5E28;*/
+  /*border-radius: 50%;*/
+  /*opacity: 1;*/
+  /*text-shadow: none; }*/
+  /*.carousel-control:hover, .carousel-control:focus {*/
+    /*opacity: 1;*/
+    /*background-color: #B33C12; }*/
 
-.carousel-control.left {
-  height: 30px;
-  top: 50%;
-  width: 30px;
-  left: 8%; }
+/*.carousel-control.left {*/
+  /*height: 30px;*/
+  /*top: 50%;*/
+  /*width: 30px;*/
+  /*left: 8%; }*/
 
-.carousel-control.right {
-  height: 30px;
-  right: 8%;
-  top: 50%;
-  width: 30px; }
+/*.carousel-control.right {*/
+  /*height: 30px;*/
+  /*right: 8%;*/
+  /*top: 50%;*/
+  /*width: 30px; }*/
 
-.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .fa, .carousel-control .fa {
-  display: inline-block;
-  z-index: 5; }
+/*.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .fa, .carousel-control .fa {*/
+  /*display: inline-block;*/
+  /*z-index: 5; }*/
 
-.carousel-control .fa {
-  font-size: 26px;
-  margin: 2px; }
+/*.carousel-control .fa {*/
+  /*font-size: 26px;*/
+  /*margin: 2px; }*/
 
-.carousel-control.left, .carousel-control.right {
-  background-image: none; }
+/*.carousel-control.left, .carousel-control.right {*/
+  /*background-image: none; }*/
 
-.carousel-inner {
-  background-color: #d6d2cc; }
+/*.carousel-inner {*/
+  /*background-color: #d6d2cc; }*/
 
-.carousel-inner > .item {
-  padding: 50px; }
+/*.carousel-inner > .item {*/
+  /*padding: 50px; }*/
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  border-radius: 8px;
-  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-  margin-left: 25%;
-  max-width: 50%; }
+/*.carousel-inner > .item > img,*/
+/*.carousel-inner > .item > a > img {*/
+  /*border-radius: 8px;*/
+  /*box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);*/
+  /*margin-left: 25%;*/
+  /*max-width: 50%; }*/
 
-.carousel-indicators {
-  bottom: 0px; }
+/*.carousel-indicators {*/
+  /*bottom: 0px; }*/
 
-.carousel-indicators > li {
-  background-color: #FFFFFF;
-  border: 0 none; }
+/*.carousel-indicators > li {*/
+  /*background-color: #FFFFFF;*/
+  /*border: 0 none; }*/
 
-.carousel-indicators .active {
-  background-color: #EB5E28; }
+/*.carousel-indicators .active {*/
+  /*background-color: #EB5E28; }*/
 
 .modal-header {
   border-bottom: 1px solid #DDDDDD;

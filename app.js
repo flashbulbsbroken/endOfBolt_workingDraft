@@ -54,7 +54,7 @@ app.use(session({
   resave: true,
   saveUninitialized: false,
   //cookie, allows for 60,000 ms/one minute of inactivity before logging out
-  cookie: { maxAge: 60000, secure: false }
+  cookie: { maxAge: 900000, secure: false }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -95,12 +95,11 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/add', add);
 
-
 //Catch all
 app.get('/*', function(request, response, next) {
   response.sendFile(path.join(__dirname, '../views/index.html'));
 });
-//app.use('/uploads', uploads);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

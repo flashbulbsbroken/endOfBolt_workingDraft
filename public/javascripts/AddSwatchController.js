@@ -1,7 +1,5 @@
 app.controller('AddSwatchController', ['$scope', '$http', '$location', 'Upload', function($scope, $http, $location, Upload){
 
-    //$scope.fabricStash = [{}];
-
     $scope.swatchForm = {};
 
     $scope.addSwatch = function(event){
@@ -10,13 +8,7 @@ app.controller('AddSwatchController', ['$scope', '$http', '$location', 'Upload',
         $scope.upload($scope.file);
 
         $location.path('/home');
-        //var swatchData = $scope.swatchForm;
-        //
-        //$http({method: "POST", url: "/add/add", enctype:"multipart/form-data", data: swatchData}).then(function(response){
-        //    console.log(response);
-        //
-        //    $scope.getSwatches(swatchData);
-        //});
+
     };
 
     $scope.upload = function (file) {
@@ -35,20 +27,6 @@ app.controller('AddSwatchController', ['$scope', '$http', '$location', 'Upload',
         });
 
     };
-
-    //$scope.getSwatches = function(){
-    //    $http({method: "GET", url:"/home/get"}).then(function(response){
-    //
-    //        $scope.swatchList = [];
-    //
-    //        for (var i = 0; i < response.fabricStash.length; i++){
-    //            $scope.swatchList.push(response.data.fabricStash[i].img.path);
-    //        }
-    //
-    //    });
-    //};
-    //
-    //$scope.getSwatches();
 
 
 }]);

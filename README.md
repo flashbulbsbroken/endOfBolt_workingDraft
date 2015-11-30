@@ -1,4 +1,4 @@
-# soloProject_workingDraft
+# endOfBolt_workingDraft
 This is the solo project I started working on while attending Prime Digital Academy, End of Bolt.  
 
 In my freetime I am a quilter and with that comes a large collection of fabric.  End of Bolt is a inventory application, that allows quilters access to their fabric collection wherever they are.  
